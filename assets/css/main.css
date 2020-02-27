@@ -1,0 +1,189 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Century Gothic';
+}
+
+.container{
+    width: 600px;
+    height: 450px;
+    background: #eeeeee;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, .3);
+}
+
+.container .clock-cover{
+    display: flex;
+    width: 1200px;
+    height: 100%;
+    align-items: center;
+    transition: all 100ms ease-in-out;
+    background: -webkit-linear-gradient(right, #2f2ff8, #ee2d2d);
+}
+
+.container .clock-cover.switch-toggle{
+    transform: translateX(-600px);
+}
+
+.container .hand-clock{
+    width: 600px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .clock-face{
+    width: 300px;
+    height: 300px;
+    border: solid 20px #fff;
+    background: #f5f5f5;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, .4) inset;
+    border-radius: 50%;
+    position: relative;
+}
+
+.container .hand-clock .hand{
+    position: absolute;
+    width: 45%;
+    height: 6px;
+    background: #000;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0;
+    transform: rotate(270deg);
+}
+
+.container .hand-clock .hand::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #000;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    left: 86%;
+    transform: rotate(45deg);
+    transform-origin: 92%;
+}
+
+.container .hand-clock::after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #000;
+}
+
+.container .hand-clock .clock-minute{
+    width: 40%;
+}
+
+.container .hand-clock .clock-hour{
+    width: 30%;
+}
+
+.container .digital-clock-cover{
+    width: 600px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .digital-clock{
+    width: 400px;
+    height: 250px;
+    background: #D8D9D3;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.container .digital-clock::after{
+    content: '';
+    width: 30px;
+    height: 20px;
+    background: #b5b6b0;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: -1;
+}
+
+.container .digital-clock .time{
+    display: flex;
+    font-size: 50px;
+    background: #CED6D9;
+    border: solid 20px #050507;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, .4) inset;
+    color: #000002;
+    padding: 20px 35px;
+    border-radius: 5px;
+}
+
+.clock-toggle .switch button{
+    margin: 20px 0px;
+    font-size: 30px;
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #eeeeee;
+    background: rgb(3, 3, 3);
+}
+
+@media (max-width: 600px){
+    
+    .container{
+        width: 350px;
+        height: 400px;
+    }
+
+    .container .clock-cover{
+        width: 730px;
+    }
+
+    .container .clock-cover.switch-toggle{
+        transform: translateX(-50%);
+    }
+
+    .container .hand-clock{
+        width: 100%;
+        height: 100%;
+    }   
+
+    .container .clock-face{
+        width: 250px;
+        height: 250px;
+    }
+
+    .container .digital-clock-cover{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .container .digital-clock{
+        width: 300px;
+        height: 200px;
+    }   
+    .container .digital-clock .time{
+        font-size: 30px;
+    }
+}
