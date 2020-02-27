@@ -7,7 +7,7 @@ function digitalClock(){
     const secondTime = document.querySelector('.digital-second')
 
     let dateNow = new Date();
-    let hour = dateNow.getHours();
+    let hour = dateNow.getHours() % 12;
     let minute = dateNow.getMinutes();
     let second = dateNow.getSeconds();
 
